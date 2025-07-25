@@ -9,7 +9,7 @@ export default function Home() {
       </Head>
       <Header />
       <main className="p-6">
-        <p className="text-lg">Welcome to your Next.js + TypeScript + Tailwind CSS project!</p>
+        <p className="text-lg">Welcome to our New Project!</p>
       </main>
     </>
   );

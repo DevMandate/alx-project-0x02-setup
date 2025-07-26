@@ -1,17 +1,38 @@
+import React, { useState } from "react";
 import Card from "@/components/common/Card";
+import PostModal from "@/components/common/PostModal";
 
-const Home = () => {
+const HomePage = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posts, setPosts] = useState([
+    { title: "Welcome", content: "This is the home page!" },
+  ]);
+
+  const handleAddPost = (title: string, content: string) => {
+    setPosts([...posts, { title, content }]);
+  };
+
   return (
-    <div className="p-6 space-y-4">
-      <h1 className="text-2xl font-bold text-center mb-6 text-blue-800">
-        Welcome to the Home Page
-      </h1>
+    <div className="p-6">
+      <h1 className="text-3xl font-bold mb-6">Home Page</h1>
+      <button
+        onClick={() => setIsModalOpen(true)}
+        className="mb-4 px-4 py-2 bg-green-600 text-white rounded"
+      >
+        Add New Post
+      </button>
 
-      <Card title="Introduction" content="This project showcases reusable components using Next.js." />
-      <Card title="Why Next.js?" content="Next.js offers routing, server-side rendering, and great performance." />
-      <Card title="What’s Next?" content="Explore more components and dynamic features in the upcoming tasks." />
+      <PostModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onSubmit={handleAddPost}
+      />
+
+      {posts.map((post, index) => (
+        <Card key={index} title={post.title} content={post.content} />
+      ))}
     </div>
   );
 };
 
-export default Home;
+export default HomePage;

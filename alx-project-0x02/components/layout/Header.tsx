@@ -1,16 +1,14 @@
-import Link from 'next/link';
+import Link from "next/link";
+import React from "react";
 
 const Header = () => {
   return (
-    <header className="bg-blue-600 text-white p-4 shadow-md">
-      <div className="flex justify-between items-center max-w-4xl mx-auto">
-        <h1 className="text-xl font-semibold">ALX Project 2</h1>
-        <nav className="space-x-4">
-          <Link href="/" className="hover:underline">Home</Link>
-          <Link href="/home" className="hover:underline">/home</Link>
-          <Link href="/about" className="hover:underline">/about</Link>
-        </nav>
-      </div>
+    <header className="bg-gray-800 text-white p-4">
+      <nav className="flex gap-4">
+        <Link href="/home" className="hover:underline">Home</Link>
+        <Link href="/about" className="hover:underline">About</Link>
+        <Link href="/posts" className="hover:underline">Posts</Link>
+      </nav>
     </header>
   );
 };

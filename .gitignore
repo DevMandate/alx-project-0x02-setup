@@ -39,3 +39,5 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+alx-project-0x02/node_modules
+alx-project-0x02/node_modules
